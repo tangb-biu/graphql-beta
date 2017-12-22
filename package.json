@@ -1,0 +1,34 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "^2.5.7",
+    "express": "~4.13.1",
+    "graphql": "^0.12.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0",
+    "transform-runtime": "^0.0.0",
+    "xmas": "^0.1.2"
+  },
+  "devDependencies": {
+    "babel-plugin-syntax-do-expressions": "^6.13.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-do-expressions": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0"
+  }
+}
