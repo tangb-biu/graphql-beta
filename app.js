@@ -5,10 +5,12 @@ import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 
+import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
+import { makeExecutableSchema } from 'graphql-tools';
 
 import routes from './routes/index';
-import { graphql } from 'graphql';
-import schema from './routes/schema';
+//import { graphql } from 'graphql';
+import schema from './schema/test';
 let app = express();
 
 // view engine setup
@@ -18,20 +20,16 @@ app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.text({ type: 'application/graphql' }));
+//app.use(bodyParser.text({ type: 'application/graphql' }));
 //app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.post('/graphql', (req, res) => {
-    graphql(schema, req.body)
-        .then((result) => {
-            res.send(JSON.stringify(result, null, 2));
-        })
-})
-
 app.use('/', routes);
+console.log(schema);
+app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
+app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
