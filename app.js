@@ -27,7 +27,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-console.log(schema);
 app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
 app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
