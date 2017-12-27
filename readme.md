@@ -11,7 +11,7 @@ GraphQL是一个用于API的查询语言,是一个使用基于类型系统来执
 * 4.启动浏览器打开http://localhost:3000/graphiql
 
 ## 基本内容讲解
-* 参考文档： [GraphQL中文文档](http://www.mchz.com.cn/meichuang/)
+* 参考文档： [GraphQL中文文档](http://graphql.cn/)
 ### 查询和变更
 #### 字段
 GraphQL 是关于请求对象上的特定字段
